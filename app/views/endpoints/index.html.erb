@@ -1,0 +1,8 @@
+<div class="column-2 border">
+  <h1 class="font-bold text-4xl">Endpoints#index</h1>
+  <h1 class="border">Base url: "https://api-web.nhle.com/v1/"</h1>
+  <% @endpoints.map do |endpoint| %>
+    <%= link_to endpoint.path, endpoint_path(endpoint) %>
+  <% end %>
+</div>
+
