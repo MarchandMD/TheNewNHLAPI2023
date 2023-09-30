@@ -67,3 +67,8 @@ group :development do
   # gem "spring"
 end
 
+
+gem "rspec", "~> 3.12", :group => :test
+
+
+gem "view_component", "~> 3.6"
