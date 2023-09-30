@@ -80,6 +80,9 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.1)
@@ -105,6 +108,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -213,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  httparty (~> 0.21.0)
   importmap-rails
   jbuilder
   pg (~> 1.1)

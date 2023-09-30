@@ -72,3 +72,5 @@ gem "rspec", "~> 3.12", :group => :test
 
 
 gem "view_component", "~> 3.6"
+
+gem "httparty", "~> 0.21.0"
