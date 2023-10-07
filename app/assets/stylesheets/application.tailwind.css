@@ -11,3 +11,10 @@
 }
 
 */
+
+body > *,
+*::before,
+*::after {
+  border-width: 1px;
+  border-style: none;
+}
