@@ -1,11 +1,12 @@
 class EndpointsController < ApplicationController
   def index
-    @endpoints = Endpoint.all.sort_by &:path
+    @endpoints = Endpoint.all.sort_by(&:path)
   end
 
   def show
     @endpoint = Endpoint.find(params[:id])
-    @response = NhlService.get_endpoint(endpoint: @endpoint.path)
+    response = NhlService.get_endpoint(endpoint: @endpoint.path)
+    @response = JSON.parse(response.body)
   end
 
   def new

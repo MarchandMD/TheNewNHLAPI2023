@@ -1,0 +1,24 @@
+Select a day
+<%= form_with url: schedules_path, method: :get, local: true do |f| %>
+  <%= f.date_field :game_date %>
+  <%= submit_tag "search" %>
+<% end %>
+<div>
+  <% if !@day_schedule.nil? %>
+    <%= @day_schedule[:gameWeek][0][:games].map { |game| game[:id] } %>
+  <% end %>
+</div>
+
+<div>
+  pick a team
+  <%= form_with url: schedules_path, method: :get, local: true do |f| %>
+    <%= f.select :full_name, @active_teams %>
+    <%= submit_tag "search" %>
+  <% end %>
+</div>
+
+<div>
+<% if !@team_schedule.nil? %>
+  <%= @team_schedule %>
+<% end %>
+</div>

@@ -81,3 +81,7 @@ gem "standard", "~> 1.31"
 
 gem "pry", "~> 0.14.2"
 
+
+gem "devise", "~> 4.9"
+
+gem "omniauth-oauth2", "~> 1.8"
