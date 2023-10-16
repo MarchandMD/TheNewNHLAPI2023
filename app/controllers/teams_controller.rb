@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = NhlService.team(team_params[:id])
-    @team_name = Team.find_by(abbreviation: params[:id]).full_name
+    @team_name = Team.find_by(abbreviation: params[:id])
   end
 
   private
