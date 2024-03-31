@@ -18,11 +18,15 @@ class NhlService
     HTTParty.get(base_uri + "/club-schedule-season/#{triCode}/now")
   end
 
-  def self.all_teams
-    HTTParty.get("https://api.nhle.com/stats/rest/en/franchise?sort=fullName&include=teams")
+  def self.all_franchises
+    HTTParty.get("https://api.nhle.com/stats/rest/en/franchise?sort=fullName&include=teams")["data"]
   end
 
-  def self.team(triCode)
-    HTTParty.get("https://api-web.nhle.com/v1/scoreboard/#{triCode}/now")
+  def self.all_teams
+    HTTParty.get("https://api.nhle.com/stats/rest/en/team")
+  end
+
+  def self.get_roster(tri_code:)
+    HTTParty.get("https://api-web.nhle.com/v1/roster/#{tri_code}/current")
   end
 end

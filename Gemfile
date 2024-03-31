@@ -24,9 +24,6 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -54,6 +51,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails", "~> 6.1"
+  gem "webmock", "~> 3.23"
+  gem "vcr", "~> 6.2"
 end
 
 group :development do
@@ -85,3 +85,11 @@ gem "pry", "~> 0.14.2"
 gem "devise", "~> 4.9"
 
 gem "omniauth-oauth2", "~> 1.8"
+
+gem "feathericon-rails", "~> 1.0"
+
+
+
+gem "cssbundling-rails", "~> 1.4"
+
+gem "jsbundling-rails", "~> 1.3"

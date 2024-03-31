@@ -1,21 +1,10 @@
-<div class="col-span-2">
-  <h1 class="text-4xl">Teams</h1>
-</div>
-<div class="grid grid-flow-col">
-  <div class="col-span-500px grid grid-cols-4 gap-2">
-    <% @all_teams["data"].map do |team| %>
-      <%= link_to team_path(team["teams"][0]["triCode"]) do  %>
-        <div class="border p-3 rounded hover:shadow-md">
-          <div><%= team["fullName"]  %></div>
-          <div><%= team["teams"][0]["triCode"] %></div>
-        </div>
+<div class="border">
+  <h1 class="text-xl">Teams</h1>
+  <% @all_teams.each do |team| %>
+    <ul>
+      <% if team.active %>
+        <%= link_to team.full_name, team_path(team) %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="grid justify-center">
-    <% @all_teams["data"].map do |team| %>
-      <div><%= link_to team["fullName"], team_path(team["teams"][0]["triCode"])  %></div>
-      <div><%= team["teams"][0]["triCode"] %></div>
-    <% end %>
-  </div>
+    </ul>
+  <% end %>
 </div>
