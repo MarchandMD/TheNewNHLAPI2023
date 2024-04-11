@@ -1,79 +1,83 @@
-<div class="flex align-center">
-  <div><%= @team.full_name %></div>
-  <div><%= @team.tri_code %></div>
-</div>
-<div>
-  <h1>Forwards</h1>
-  <table>
-    <tr>
-      <thead>
-        <td>Player name</td>
-        <td>position</td>
-        <td>number</td>
-      </thead>
-    </tr>
-    <tr>
-      <% @team.forwards.each do |player| %>
-        <td>
-          <%= link_to player.name, team_player_path(@team, player) %>
-        </td>
-        <td>
-          <%= player.position %>
-        </td>
-        <td>
-          <%= player.number %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
-<div>
-  <h1>Defense</h1>
-  <table>
-    <tr>
-      <thead>
-        <td>Player name</td>
-        <td>position</td>
-        <td>number</td>
-      </thead>
-    </tr>
-    <tr>
-      <% @team.defense.each do |player| %>
-        <td>
-          <%= player.name %>
-        </td>
-        <td>
-          <%= player.position %>
-        </td>
-        <td>
-          <%= player.number %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
-<div>
-  <h1>Goalies</h1>
-  <table>
-    <tr>
-      <thead>
-        <td>Player name</td>
-        <td>position</td>
-        <td>number</td>
-      </thead>
-    </tr>
-    <tr>
-      <% @team.goalies.each do |player| %>
-        <td>
-          <%= player.name %>
-        </td>
-        <td>
-          <%= player.position %>
-        </td>
-        <td>
-          <%= player.number %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+<div class="row justify-content-center mb-3">
+  <div class="col-6 my-6">
+    <div class="d-flex justify-content-center">
+      <div><%= @team.full_name %></div>
+      <div><%= @team.tri_code %></div>
+    </div>
+    <h1>Forwards</h1>
+    <div class="d-flex justify-content-center">
+      <table>
+        <tr>
+          <thead>
+            <td>Player name</td>
+            <td>position</td>
+            <td>number</td>
+          </thead>
+        </tr>
+        <tr>
+          <% @team.forwards.each do |player| %>
+            <td>
+              <%= link_to player.name, team_player_path(@team, player) %>
+            </td>
+            <td>
+              <%= player.position %>
+            </td>
+            <td>
+              <%= player.number %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <h1>Defense</h1>
+    <div class='d-flex justify-content-center'>
+      <table>
+        <tr>
+          <thead>
+            <td>Player name</td>
+            <td>position</td>
+            <td>number</td>
+          </thead>
+        </tr>
+        <tr>
+          <% @team.defense.each do |player| %>
+            <td>
+              <%= player.name %>
+            </td>
+            <td>
+              <%= player.position %>
+            </td>
+            <td>
+              <%= player.number %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <h1>Goalies</h1>
+    <div class='d-flex justify-content-center m-5'>
+      <table>
+        <tr>
+          <thead>
+            <td>Player name</td>
+            <td>position</td>
+            <td>number</td>
+          </thead>
+        </tr>
+        <tr>
+          <% @team.goalies.each do |player| %>
+            <td>
+              <%= player.name %>
+            </td>
+            <td>
+              <%= player.position %>
+            </td>
+            <td>
+              <%= player.number %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>

@@ -7,6 +7,7 @@ RSpec.describe "TeamsFacade" do
 
       all_teams.each do |team|
         expect(team).to be_a Team
+        expect(team.conference).to be_a String
       end
     end
   end

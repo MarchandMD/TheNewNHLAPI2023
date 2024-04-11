@@ -1,0 +1,40 @@
+<div class="division">
+  <h1>Metropolitan</h1>
+  <% all_teams.each do |team| %>
+    <% if team.division_name == "Metropolitan" %>
+      <div>
+        <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top"} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="division">
+  <h1>Central</h1>
+  <% all_teams.each do |team| %>
+    <% if team.division_name == "Central" %>
+      <div>
+        <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top"} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="division">
+  <h1>Atlantic</h1>
+  <% all_teams.each do |team| %>
+    <% if team.division_name == "Atlantic" %>
+      <div>
+        <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top"} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="division">
+  <h1>Pacific</h1>
+  <% all_teams.each do |team| %>
+    <% if team.division_name == "Pacific" %>
+      <div>
+        <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top"} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

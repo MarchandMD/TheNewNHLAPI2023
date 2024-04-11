@@ -6,15 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= javascript_include_tag "turbo", type: "module" %>
   </head>
   <body>
     <%= render 'layouts/header' %>
     <%= render "layouts/navbar" %>
     <p class=""><%= notice %></p>
     <p class=""><%= alert %></p>
-    <main class="">
+    <main class="container my-6">
       <%= yield %>
     </main>
   </body>

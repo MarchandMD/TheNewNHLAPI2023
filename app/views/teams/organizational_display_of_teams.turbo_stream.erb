@@ -1,0 +1,13 @@
+<% if params[:display] == "conferences" %>
+  <%= turbo_stream.update "organizational_display_of_teams" do %>
+    <div>
+      <%= render partial: "teams/conferences", locals: {all_teams: @all_teams} %>
+    </div>
+  <% end %>
+<% elsif params[:display] == "divisions" %>
+  <%= turbo_stream.update "organizational_display_of_teams" do %>
+    <div class="d-flex flex-wrap">
+      <%= render partial: "teams/divisions", locals: {all_teams: @all_teams} %>
+    </div>
+  <% end %>
+<% end %>

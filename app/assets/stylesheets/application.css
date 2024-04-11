@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+#league-conference-division div {
+  display: flex;
+  justify-content: center;
+}
+
+.division {
+  color: red !important;
+}
