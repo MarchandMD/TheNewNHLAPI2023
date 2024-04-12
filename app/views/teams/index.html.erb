@@ -14,27 +14,29 @@
 </div>
 <div class="row justify-content-center">
   <%= turbo_frame_tag "organizational_display_of_teams" do %>
-    <div class="col-6">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>team name</th>
-            <th>conference</th>
-            <th>division</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @all_teams.each do |team| %>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <table class="table">
+          <thead>
             <tr>
-              <td scope="row">
-                <%= link_to team.full_name, team_path(team), class: "text-decoration-none", data: {turbo_frame: "_top"} %>
-              </td>
-              <td><%= team.conference_name %></td>
-              <td><%= team.division_name %></td>
+              <th>team name</th>
+              <th>conference</th>
+              <th>division</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @all_teams.each do |team| %>
+              <tr>
+                <td scope="row">
+                  <%= link_to team.full_name, team_path(team), class: "text-decoration-none", data: {turbo_frame: "_top"} %>
+                </td>
+                <td><%= team.conference_name %></td>
+                <td><%= team.division_name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   <% end %>
 </div>
