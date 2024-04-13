@@ -43,7 +43,7 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -59,9 +59,6 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
-  # live reloading
-  gem "rails_live_reload", "~> 0.3.4"
 
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -92,3 +89,5 @@ gem "feathericon-rails", "~> 1.0"
 
 gem "cssbundling-rails", "~> 1.4"
 
+
+gem "bootstrap", "~> 5.3"

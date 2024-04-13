@@ -1,0 +1,31 @@
+{
+  "name": "thenewnhlapi2023",
+  "version": "1.0.0",
+  "description": "About 2 weeks before the start of the NHL season, the National Hockey League began publishing a new API.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.scss",
+    "build:css:prefix": "postcss ./app/assets/builds/application.scss --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10.4.19",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "nodemon": "^3.1.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.75.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
