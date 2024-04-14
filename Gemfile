@@ -91,3 +91,5 @@ gem "cssbundling-rails", "~> 1.4"
 
 
 gem "bootstrap", "~> 5.3"
+
+gem "cancancan", "~> 3.5"
