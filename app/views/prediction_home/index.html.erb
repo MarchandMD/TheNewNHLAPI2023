@@ -1,0 +1,18 @@
+<div class="border border-1">
+  <h1>PredictionHome#index</h1>
+  <p>Find me in app/views/prediction_home/index.html.erb</p>
+</div>
+<div class="border border-1 d-flex justify-content-around">
+  <%= link_to root_path, class: "d-flex align-items-center p-3 my-3 text-decoration-none border border-1 shadow-sm rounded" do %>
+    <div class="">
+      Make predictions
+    </div>
+  <% end %>
+  <% if current_user %>
+    <%= link_to user_predictions_path(current_user), class: "d-flex align-items-center p-3 my-3 text-decoration-none border border-1 shadow-sm rounded text-decoration-none" do %>
+      <div class="">
+        Review predictions
+      </div>
+    <% end %>
+  <% end %>
+</div>

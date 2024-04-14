@@ -1,5 +1,14 @@
-<div class="border px-3 py-2 display-6 d-flex">
-  <div id="title">
+<div class="border px-3 py-2 d-flex align-items-center">
+  <div class="display-6 flex-grow-1">
     Player Profiles
+  </div>
+  <div class="flex-grow-auto">
+    <% if !current_user %>
+      <%= link_to "sign up", new_user_registration_path %>
+      <%= link_to "log in", new_user_session_path %>
+      <% else %>
+      <%= "logged in as: #{current_user.email}" %>
+      <%= link_to "log out", destroy_user_session_path %>
+    <% end %>
   </div>
 </div>

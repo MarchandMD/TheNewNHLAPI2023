@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    resources :users do
-      resources :predictions
-    end
+  devise_for :users
+
+  resources :users do
+    resources :predictions
   end
 
   root "teams#index"
@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get "/about", to: "about#about", as: :about
   get "/organizational_display_of_teams", to: "teams#organizational_display_of_teams"
 
-  resources :predictions, only: [:index]
+  get "/predictions", to: "prediction_home#index"
 end
