@@ -19,7 +19,7 @@ class NhlService
   end
 
   def self.all_teams
-    HTTParty.get("https://api.nhle.com/stats/rest/en/franchise?sort=fullName&include=teams")
+    HTTParty.get("https://api-web.nhle.com/v1/standings/2024-02-25")
   end
 
   def self.team(triCode)

@@ -1,8 +1,13 @@
-<div class="border bg-blue-800">
-<% if user_signed_in? %>
-  <div> Welcome <%= current_user.email %> </div>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %>
-<% end %>
+<div class="border-4 p-4">
+  <h1>Welcome</h1>
+  <h3>Welcome page</h3>
+  <%= link_to "teams", teams_path %>
+</div>
+
+<div class="border-4">
+  What do I want this to become? What could I do with it? What do I want to do with it? If I'm the PO here, make the thing.
+
+  It would be nice if I could see all the teams listed. All the current teams. Not the old teams.
+
+  get rid of that sidebar. I don't need that right now. 
 </div>
