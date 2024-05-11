@@ -35,3 +35,7 @@
 
 # ignore notes
 /notes
+
+/node_modules
+
+/.vscode

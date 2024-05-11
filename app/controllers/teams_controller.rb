@@ -1,16 +1,19 @@
 class TeamsController < ApplicationController
   def index
-    @all_teams = NhlService.all_teams
+    @all_teams = TeamsFacade.all_teams
   end
 
   def show
-    @team = NhlService.team(team_params[:id])
-    @team_name = Team.find_by(abbreviation: params[:id])
+    @team = Team.find(params[:id])
   end
 
-  private
+  def organizational_display_of_teams
+    @all_teams = TeamsFacade.all_teams
 
-  def team_params
-    params.permit(:id)
+    if params[:display] == "conferences"
+      respond_to do |format|
+        format.turbo_stream
+      end
+    end
   end
 end

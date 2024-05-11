@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-6">
+    <h3>Western</h3>
+    <% all_teams.each do |team| %>
+      <% if team.conference_name == "Western" %>
+        <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top"} %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-6">
+    <h3>Eastern</h3>
+    <% all_teams.each do |team| %>
+      <%= link_to team.full_name, team_path(team), data: {turbo_frame: "_top" } if team.conference_name == "Eastern" %>
+    <% end %>
+  </div>
+</div>
