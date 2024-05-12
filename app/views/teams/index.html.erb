@@ -1,42 +1,10 @@
 <div class="row text-center">
   <h1 class="teams">Teams</h1>
 </div>
-<div class="row" id="league-conference-division">
-  <div class="col">
-    <%= link_to "League", teams_path, class: "text-decoration-none d-flex justify-content-center" %>
-  </div>
-  <div class="col">
-    <%= link_to "Conferences", organizational_display_of_teams_path(display: "conferences"), data: {turbo_stream: true}, class: "text-decoration-none d-flex justify-content-center" %>
-  </div>
-  <div class="col">
-    <%= link_to "Divisions", organizational_display_of_teams_path(display: "divisions"), data: {turbo_stream: true}, class: "text-decoration-none d-flex justify-content-center" %>
-  </div>
-</div>
-<div class="row justify-content-center">
-  <%= turbo_frame_tag "organizational_display_of_teams" do %>
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>team name</th>
-              <th>conference</th>
-              <th>division</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @all_teams.each do |team| %>
-              <tr>
-                <td scope="row">
-                  <%= link_to team.full_name, team_path(team), class: "text-decoration-none", data: {turbo_frame: "_top"} %>
-                </td>
-                <td><%= team.conference_name %></td>
-                <td><%= team.division_name %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<ul>
+  <% @all_teams[:standings].each do |team| %>
+    <li>
+      <%= link_to team[:teamName][:default], team_path(team[:teamAbbrev][:default]) %>
+    </li>
   <% end %>
-</div>
+</ul>

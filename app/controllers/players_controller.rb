@@ -1,13 +1,12 @@
 class PlayersController < ApplicationController
   def index
-    mcjesus = 8478402
-
-    response = HTTParty.get("https://api-web.nhle.com/v1/player/#{mcjesus}/landing")
-
-    @player = response["playerId"]
   end
 
   def show
-    @player = Player.find(params[:id])
+    response = RestClient.get("https://api-web.nhle.com/v1/player/#{params[:id]}/landing")
+
+    player = JSON.parse(response.body, symbolize_names: true)
+
+    @player = Player.new(player)
   end
 end

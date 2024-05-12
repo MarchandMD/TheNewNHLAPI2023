@@ -1,1 +1,27 @@
-<%= @player.name %>
+<div class="border d-flex">
+  <div>
+    <%= image_tag @player.headshot, size: "150", class: "border border-4" %>
+  </div>
+  <div class="flex-grow-1 d-flex flex-column justify-content-center px-3">
+    <%= content_tag(:h1, @player.name, class: "") %>
+    <%= content_tag(:p, @player.position_code, class: "") %>
+  </div>
+</div>
+<div class="border">
+  <table>
+    <tr>
+      <% @player.career_totals_regular_season.each do |k,v| %>
+        <th class="p-1">
+          <%= k %>
+        </th>
+      <% end %>
+    </tr>
+    <tr>
+      <% @player.career_totals_regular_season.each do |k,v| %>
+        <td>
+          <%= v %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>

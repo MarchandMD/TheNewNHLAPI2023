@@ -1,10 +1,16 @@
 class TeamsController < ApplicationController
   def index
-    @all_teams = TeamsFacade.all_teams
+    response = RestClient.get("https://api-web.nhle.com/v1/standings/now")
+    @all_teams = JSON.parse(response.body, symbolize_names: true)
   end
 
   def show
-    @team = Team.find(params[:id])
+    roster = RestClient.get("https://api-web.nhle.com/v1/roster/#{params[:id]}/current")
+    roster_data = JSON.parse(roster.body, symbolize_names: true)
+
+    @roster = roster_data[:forwards].map { |player| Player.new(player) }
+    @roster_defense = roster_data[:defensemen].map { |player| Player.new(player) }
+    @roster_goalies = roster_data[:goalies].map { |player| Player.new(player) }
   end
 
   def organizational_display_of_teams
